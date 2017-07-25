@@ -57,10 +57,25 @@ public class frmCalculadora extends javax.swing.JFrame {
         });
 
         btnSoma.setText("+");
+        btnSoma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSomaActionPerformed(evt);
+            }
+        });
 
         btnMult.setText("x");
+        btnMult.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMultActionPerformed(evt);
+            }
+        });
 
         btnDiv.setText("/");
+        btnDiv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDivActionPerformed(evt);
+            }
+        });
 
         btnSair.setText("Sair");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
@@ -70,6 +85,8 @@ public class frmCalculadora extends javax.swing.JFrame {
         });
 
         lblTotal.setText("Total");
+
+        txtTotal.setEditable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -91,8 +108,8 @@ public class frmCalculadora extends javax.swing.JFrame {
                         .addComponent(txtValor1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(btnSoma, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnSoma, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnSub, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnMult, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -141,12 +158,57 @@ public class frmCalculadora extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubActionPerformed
-        // TODO add your handling code here:
+        
+        double n1, n2, total;
+        
+        n1 = Double.parseDouble(txtValor1.getText());
+        n2 = Double.parseDouble(txtValor2.getText());
+        
+        total = n1 - n2;
+        
+        txtTotal.setText(String.valueOf(total));
     }//GEN-LAST:event_btnSubActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-        // TODO add your handling code here:
+        
+        System.exit(0);
     }//GEN-LAST:event_btnSairActionPerformed
+
+    private void btnSomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSomaActionPerformed
+        
+        double n1, n2, total;
+        
+        n1 = Double.parseDouble(txtValor1.getText());
+        n2 = Double.parseDouble(txtValor2.getText());
+        
+        total = n1 + n2;
+        
+        txtTotal.setText(String.valueOf(total));
+    }//GEN-LAST:event_btnSomaActionPerformed
+
+    private void btnMultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultActionPerformed
+        
+        double n1, n2, total;
+        
+        n1 = Double.parseDouble(txtValor1.getText());
+        n2 = Double.parseDouble(txtValor2.getText());
+        
+        total = n1 * n2;
+        
+        txtTotal.setText(String.valueOf(total));
+    }//GEN-LAST:event_btnMultActionPerformed
+
+    private void btnDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivActionPerformed
+        
+        double n1, n2, total;
+        
+        n1 = Double.parseDouble(txtValor1.getText());
+        n2 = Double.parseDouble(txtValor2.getText());
+        
+        total = n1 / n2;
+        
+        txtTotal.setText(String.valueOf(total));
+    }//GEN-LAST:event_btnDivActionPerformed
 
     /**
      * @param args the command line arguments
